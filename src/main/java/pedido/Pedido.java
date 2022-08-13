@@ -11,7 +11,7 @@ public class Pedido  {
     private final ArrayList<ItemPedido> itens;
     private final Cliente cliente;
 
-    public Pedido(int id, ArrayList<ItemPedido> itens,Cliente cliente){
+    public Pedido(int id, ArrayList<ItemPedido> itens, Cliente cliente){
         this.id = id;
         this.itens=itens;
         this.cliente=cliente;
@@ -22,7 +22,7 @@ public class Pedido  {
 
         for (ItemPedido item: itens) {
             var shake = item.getShake();
-            var qtdShake = item.getQuantidade();
+            int qtdShake = item.getQuantidade();
             var adicionais = shake.getAdicionais();
 
             var precoBase = cardapio.getPrecos().get(shake.getBase());

@@ -44,7 +44,6 @@ public class Shake implements Serializable {
     }
 
     public List<Adicional> getAdicionais() {
-        System.out.println("hehe");
         System.out.println(adicionais);
         adicionais.sort(((adicional, adicional2) -> adicional.obterTipo().toString()
                 .compareToIgnoreCase(adicional2.obterTipo().toString())));
