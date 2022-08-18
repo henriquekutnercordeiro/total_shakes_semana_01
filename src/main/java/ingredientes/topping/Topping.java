@@ -1,4 +1,7 @@
-package ingredientes;
+package ingredientes.topping;
+
+import ingredientes.Adicional;
+import ingredientes.Ingrediente;
 
 public class Topping implements Adicional,Comparable<Ingrediente> {
 

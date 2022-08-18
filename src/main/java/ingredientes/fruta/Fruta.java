@@ -1,4 +1,7 @@
-package ingredientes;
+package ingredientes.fruta;
+
+import ingredientes.Adicional;
+import ingredientes.Ingrediente;
 
 public class Fruta  implements Adicional,Comparable<Ingrediente>{
 
