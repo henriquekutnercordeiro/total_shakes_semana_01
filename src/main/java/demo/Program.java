@@ -30,10 +30,12 @@ public class Program {
         cardapio.adicionarIngrediente(mel,1.0);
         cardapio.adicionarIngrediente(aveia, 3.0);
 
-        Shake shake1 = new Shake(sorvete,banana,mel, TipoTamanho.P);
+        Shake shake1 = new Shake(sorvete, banana, mel, TipoTamanho.P);
 
         ItemPedido itemPedido1 = new ItemPedido(shake1,1);
-        Pedido pedido1 = new Pedido(1, new ArrayList<>(List.of(itemPedido1)),cliente);
+
+        Pedido pedido1 = new Pedido(1, new ArrayList<>(List.of(itemPedido1)), cliente);
+
 
         System.out.println("::::: Cardapio ShakeCIT");
         System.out.println(cardapio.getPrecos());
