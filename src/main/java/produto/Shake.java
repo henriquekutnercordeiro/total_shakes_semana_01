@@ -1,12 +1,12 @@
 package produto;
 
 import ingredientes.*;
+import ingredientes.base.Base;
+import ingredientes.fruta.Fruta;
+import ingredientes.topping.Topping;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Shake implements Serializable {
 
@@ -31,22 +31,6 @@ public class Shake implements Serializable {
         this.tipoTamanho = tipoTamanho;
     }
 
-
-    public Shake(Base base, Fruta fruta, Topping topping, TipoTamanho tipoTamanho) {
-        this.base = base;
-        this.fruta = fruta;
-        this.topping = topping;
-        this.tipoTamanho = tipoTamanho;
-    }
-
-    public Shake(Base base, Fruta fruta, Topping topping, List<Adicional> adicionais, TipoTamanho tipoTamanho) {
-        this.base = base;
-        this.fruta = fruta;
-        this.topping = topping;
-        this.adicionais = adicionais;
-        this.tipoTamanho = tipoTamanho;
-    }
-
     public Base getBase() {
         return base;
     }
@@ -60,7 +44,6 @@ public class Shake implements Serializable {
     }
 
     public List<Adicional> getAdicionais() {
-        System.out.println(adicionais);
         adicionais.sort(((adicional, adicional2) -> adicional.obterTipo().toString()
                 .compareToIgnoreCase(adicional2.obterTipo().toString())));
         return adicionais;

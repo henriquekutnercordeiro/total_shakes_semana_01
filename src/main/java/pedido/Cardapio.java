@@ -15,10 +15,8 @@ public class Cardapio {
     public void adicionarIngrediente(Ingrediente ingrediente,Double preco){
         if(preco <= 0){
             throw new IllegalArgumentException("Preco invalido.");
-        } else {
-            precos.put(ingrediente, preco);
         }
-
+        precos.put(ingrediente, preco);
     }
 
     public boolean atualizarIngrediente(Ingrediente ingrediente,Double preco){

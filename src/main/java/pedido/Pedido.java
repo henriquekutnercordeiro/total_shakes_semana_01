@@ -5,13 +5,15 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class Pedido  {
+public class Pedido implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final int id;
     private final ArrayList<ItemPedido> itens;
     private final Cliente cliente;
 
-    public Pedido(int id, ArrayList<ItemPedido> itens, Cliente cliente){
+    public Pedido(int id, ArrayList<ItemPedido> itens,Cliente cliente){
         this.id = id;
         this.itens=itens;
         this.cliente=cliente;
@@ -22,16 +24,15 @@ public class Pedido  {
 
         for (ItemPedido item: itens) {
             var shake = item.getShake();
-            int qtdShake = item.getQuantidade();
+            var qtdShake = item.getQuantidade();
             var adicionais = shake.getAdicionais();
 
             var precoBase = cardapio.getPrecos().get(shake.getBase());
             var precoBaseComTamanho = precoBase + (precoBase * shake.getTipoTamanho().multiplicador);
-            var precoComQuantidade = precoBaseComTamanho;
             var totalAdicionais = adicionais.stream().map(adicional -> cardapio.getPrecos().get(adicional))
                     .reduce(Double::sum).orElse(0.0);
 
-            total += (precoComQuantidade + totalAdicionais) *  qtdShake;
+            total += (precoBaseComTamanho + totalAdicionais) *  qtdShake;
         }
 
         return total;
@@ -40,7 +41,7 @@ public class Pedido  {
     public void adicionarItemPedido(ItemPedido itemPedidoAdicionado){
 
         if(itens.stream().anyMatch(
-                itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
+                        itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
         ){
             ItemPedido pedidoExistente = itens.stream()
                     .filter(itemPedido -> itemPedido.getShake().equals(itemPedidoAdicionado.getShake()))
