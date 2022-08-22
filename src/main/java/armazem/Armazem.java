@@ -77,8 +77,6 @@ public class Armazem {
         myStore.reduzirQuantidadeDoIngredienteEmEstoque(sorvete, 3);
         System.out.println(myStore.getEstoque());
         System.out.println(myStore.consultarQuantidadeDoIngredienteEmEstoque(sorvete));
-
-
     }
 
 
