@@ -6,13 +6,13 @@ import java.util.TreeMap;
 
 public class Cardapio {
 
-    private final TreeMap<Ingrediente,Double> precos;
+    private final TreeMap<Ingrediente, Double> precos;
 
     public Cardapio(){
         this.precos= new TreeMap<>();
     }
 
-    public void adicionarIngrediente(Ingrediente ingrediente,Double preco){
+    public void adicionarIngrediente(Ingrediente ingrediente, Double preco){
         if(preco <= 0){
             throw new IllegalArgumentException("Preco invalido.");
         }

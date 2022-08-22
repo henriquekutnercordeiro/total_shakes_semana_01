@@ -1,7 +1,7 @@
 package ingredientes.base;
 import ingredientes.Ingrediente;
 
-public class Base implements Ingrediente,Comparable<Ingrediente>{
+public class Base implements Ingrediente, Comparable<Ingrediente>{
 
     private static final long serialVersionUID = 2L;
 
