@@ -3,7 +3,7 @@ package ingredientes.fruta;
 import ingredientes.Adicional;
 import ingredientes.Ingrediente;
 
-public class Fruta  implements Adicional,Comparable<Ingrediente>{
+public class Fruta  implements Adicional, Comparable<Ingrediente>{
 
      private static final long serialVersionUID = 1L;
 

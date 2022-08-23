@@ -1,5 +1,6 @@
 package demo;
 
+import armazem.Armazem;
 import ingredientes.base.Base;
 import ingredientes.base.TipoBase;
 import ingredientes.fruta.Fruta;
